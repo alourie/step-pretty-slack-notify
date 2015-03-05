@@ -5,6 +5,11 @@ require "slack-notifier"
 webhook_url = ENV["WERCKER_PRETTY_SLACK_NOTIFY_WEBHOOK_URL"]
 channel     = ENV["WERCKER_PRETTY_SLACK_NOTIFY_CHANNEL"]
 username    = ENV["WERCKER_PRETTY_SLACK_NOTIFY_USERNAME"]
+on          = ENV["WERCKER_PRETTY_SLACK_NOTIFY_ON"]
+
+if on != "" and on != ENV["WERCKER_RESULT"]
+  exit
+end
 
 abort "Please specify the your slack webhook url" unless webhook_url
 username = "Wercker"                              unless username

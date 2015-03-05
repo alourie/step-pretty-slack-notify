@@ -1,6 +1,6 @@
-name: pretty-slack-notify
-version: 0.2.7
-description: Posts wercker build/deploy status to a Slack channel
+name: pretty-slack-notify-on
+version: 0.1.0
+description: Posts wercker build/deploy status to a Slack channel on certain previous results
 keywords:
   - notification
   - slack
@@ -14,5 +14,8 @@ properties:
     type: string
     required: false
   username:
+    type: string
+    required: false
+  on:
     type: string
     required: false
